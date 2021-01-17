@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.mapquestapi.com/geocoding/v1/address?key=LX5IfgEnTwQEdr3dropSnVYtAYL3RlPD&location=Johnson%20City,%20TN
+    uri: https://www.mapquestapi.com/geocoding/v1/address?key=<MQ_KEY>&location=Johnson%20City,%20TN
     body:
       encoding: US-ASCII
       string: ''
@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 17 Jan 2021 03:17:20 GMT
+      - Sun, 17 Jan 2021 19:45:34 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1047'
+      - '1046'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Sun, 17 Jan 2021 03:17:20 GMT
+      - Sun, 17 Jan 2021 19:45:34 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=C98E2478DBDF391B29A5FC1C8EADA285; Path=/; HttpOnly; Secure
+      - JSESSIONID=9173F555925F521B32B90E80AF0A52EC; Path=/; HttpOnly; Secure
       Status:
       - success
       Transactionweight:
@@ -56,6 +56,6 @@ http_interactions:
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Johnson
         City, TN"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Johnson
-        City","adminArea5Type":"City","adminArea4":"Washington County","adminArea4Type":"County","adminArea3":"TN","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282033405","unknownInput":"","type":"s","latLng":{"lat":36.320614,"lng":-82.342538},"displayLatLng":{"lat":36.320614,"lng":-82.342538},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=LX5IfgEnTwQEdr3dropSnVYtAYL3RlPD&type=map&size=225,160&locations=36.320614,-82.342538|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1693853040"}]}]}'
-  recorded_at: Sun, 17 Jan 2021 03:17:20 GMT
+        City","adminArea5Type":"City","adminArea4":"Washington County","adminArea4Type":"County","adminArea3":"TN","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282033405","unknownInput":"","type":"s","latLng":{"lat":36.320614,"lng":-82.342538},"displayLatLng":{"lat":36.320614,"lng":-82.342538},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<MQ_KEY>&type=map&size=225,160&locations=36.320614,-82.342538|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-759356649"}]}]}'
+  recorded_at: Sun, 17 Jan 2021 19:45:34 GMT
 recorded_with: VCR 6.0.0
