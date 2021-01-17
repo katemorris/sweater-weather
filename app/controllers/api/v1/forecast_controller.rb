@@ -5,7 +5,7 @@ module Api
     class ForecastController < ApplicationController
       def show
         forecast = ForecastFacade.by_location(params[:location])
-        render json: ForecastSerializer.new(forecast).serialized_json
+        render json: ForecastSerializer.new(forecast)
       end
     end
   end
