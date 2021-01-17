@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe WeatherService do
   describe 'class methods' do
-    it '.get_games_list_by_name()' do
+    it '.forecast()' do
       VCR.use_cassette('sample_forecast') do
         coords = {:lat=>31.1178,:lng=>-97.7311}
         response = WeatherService.forecast(coords)
