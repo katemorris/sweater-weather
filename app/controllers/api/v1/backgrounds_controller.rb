@@ -5,7 +5,7 @@ module Api
     class BackgroundsController < ApplicationController
       def show
         image_data = BackgroundsFacade.by_location(params[:location])
-        render json: BackgroundsSerializer.new(image_data)
+        render json: ImageSerializer.new(image_data)
       end
     end
   end
