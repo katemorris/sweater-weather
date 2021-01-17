@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class Forecast
   attr_reader :id, :current_weather, :daily_weather, :hourly_weather
+
   def initialize(data)
     @id = 'null'
     @current_weather = CurrentWeather.new(data[:current])

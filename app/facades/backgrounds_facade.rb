@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BackgroundsFacade
   def self.by_location(location)
     image_data = ImageService.location_images(location)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastFacade
   def self.by_location(location)
     coords = MapService.coordinates(location)

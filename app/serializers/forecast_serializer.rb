@@ -3,9 +3,7 @@
 class ForecastSerializer
   include FastJsonapi::ObjectSerializer
 
-  attribute :current_weather do |forecast|
-    forecast.current_weather
-  end
+  attribute :current_weather, &:current_weather
 
   attribute :daily_weather do |forecast|
     forecast.daily_weather.each do |day|

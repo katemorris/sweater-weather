@@ -6,7 +6,7 @@ RSpec.describe MapService do
   describe 'class methods' do
     it '.coordinates()' do
       VCR.use_cassette('sample_coordinates') do
-        location = "Johnson City, TN"
+        location = 'Johnson City, TN'
         response = MapService.coordinates(location)
 
         expect(response).to be_a Hash

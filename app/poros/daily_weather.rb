@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 class DailyWeather < Forecast
   attr_reader :date, :sunrise, :sunset, :max_temp, :min_temp,
               :conditions, :icon
+
   def initialize(data)
     @date = date_conversion(data[:dt])
     @sunrise = datetime_conversion(data[:sunrise])

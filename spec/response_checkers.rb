@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ResponseCheckers
   def forecast_get_response(forecast)
     # Main
@@ -63,7 +65,7 @@ module ResponseCheckers
     expect(forecast[:data][:attributes][:hourly_weather].first[:conditions]).to be_a String
     expect(forecast[:data][:attributes][:hourly_weather].first).to have_key(:icon)
     expect(forecast[:data][:attributes][:hourly_weather].first[:icon]).to be_a String
-    #Not There Expectations
+    # Not There Expectations
     expect(forecast[:data][:attributes]).to_not have_key(:minutely_weather)
     expect(forecast[:data][:attributes]).to_not have_key(:alerts)
   end

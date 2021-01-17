@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'date'
 
 class CurrentWeather < Forecast
   attr_reader :datetime, :sunrise, :sunset, :temperature, :feels_like,
               :humidity, :uvi, :visibility, :conditions, :icon
+
   def initialize(data)
     @datetime = datetime_conversion(data[:dt])
     @sunrise = datetime_conversion(data[:sunrise])
