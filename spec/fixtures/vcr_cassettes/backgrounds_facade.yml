@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<FLICKR_KEY>&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&safe_search=1&text=New%20Bern,%20NC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '238'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 17 Jan 2021 21:54:51 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - f_RA319kV6GFxgesCBMnPThSZwcnxXE50sBK6T-kscuBVsDr9BtuEA==
+    body:
+      encoding: UTF-8
+      string: '{"photos":{"page":1,"pages":14705,"perpage":1,"total":"14705","photo":[{"id":"50841283542","owner":"88257173@N00","secret":"ef574f7e15","server":"65535","farm":66,"title":"DSC01283-2","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
+  recorded_at: Sun, 17 Jan 2021 21:54:51 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<FLICKR_KEY>&format=json&method=flickr.people.getInfo&nojsoncallback=1&user_id=88257173@N00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '783'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 17 Jan 2021 21:54:52 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - OhrEzhz2XZILT_Jnz7zDxFUjhD4yMUVCNDF8E_HbkNCKzz_zjG5HdQ==
+    body:
+      encoding: UTF-8
+      string: '{"person":{"id":"88257173@N00","nsid":"88257173@N00","ispro":1,"can_buy_pro":0,"iconserver":"3720","iconfarm":4,"path_alias":null,"has_stats":"1","pro_badge":"standard","expire":"0","username":{"_content":"jontree13@aol.com"},"realname":{"_content":"Jon
+        Batson"},"location":{"_content":""},"timezone":{"label":"Eastern Time (US
+        & Canada)","offset":"-05:00","timezone_id":"EST5EDT"},"description":{"_content":""},"photosurl":{"_content":"https:\/\/www.flickr.com\/photos\/88257173@N00\/"},"profileurl":{"_content":"https:\/\/www.flickr.com\/people\/88257173@N00\/"},"mobileurl":{"_content":"https:\/\/m.flickr.com\/photostream.gne?id=6557103"},"photos":{"firstdatetaken":{"_content":"2004-11-30
+        09:11:46"},"firstdate":{"_content":"1337432776"},"count":{"_content":7543}}},"stat":"ok"}'
+  recorded_at: Sun, 17 Jan 2021 21:54:51 GMT
+recorded_with: VCR 6.0.0
