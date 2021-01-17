@@ -10,8 +10,6 @@ RSpec.describe MapService do
         response = MapService.coordinates(location)
 
         expect(response).to be_a Hash
-
-        expect(response).to be_a Hash
         expect(response).to have_key(:lat)
         expect(response).to have_key(:lng)
         expect(response).to_not have_key(:street)
