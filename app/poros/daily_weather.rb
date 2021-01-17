@@ -12,6 +12,6 @@ class DailyWeather < Forecast
   end
 
   def date_conversion(data)
-    Time.at(data).to_date
+    Time.at(data).to_date.to_s
   end
 end
