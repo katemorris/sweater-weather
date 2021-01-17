@@ -17,6 +17,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
 SimpleCov.start
+SimpleCov.add_filter 'spec/rails_helper.rb'
 require 'response_checkers'
 require 'webmock/rspec'
 require 'vcr'
