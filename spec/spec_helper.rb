@@ -16,6 +16,8 @@
 require 'simplecov'
 SimpleCov.start
 require 'response_checkers'
+require 'webmock/rspec'
+require 'vcr'
 
 RSpec.configure do |config|
   config.include ResponseCheckers
