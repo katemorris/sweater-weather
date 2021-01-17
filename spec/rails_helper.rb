@@ -66,4 +66,7 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
+  config.filter_sensitive_data('<FLICKR_KEY>') { ENV['FLICKR_KEY'] }
+  config.filter_sensitive_data('<OW_KEY>') { ENV['OW_KEY'] }
+  config.filter_sensitive_data('<MQ_KEY>') { ENV['MQ_KEY'] }
 end

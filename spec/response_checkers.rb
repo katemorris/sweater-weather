@@ -25,7 +25,7 @@ module ResponseCheckers
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:humidity)
     expect(forecast[:data][:attributes][:current_weather][:humidity]).to be_an Integer
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:uvi)
-    expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_an Integer
+    expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_an Float
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:visibility)
     expect(forecast[:data][:attributes][:current_weather][:visibility]).to be_a Integer
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:conditions)
