@@ -5,7 +5,7 @@ class HourlyWeather < Forecast
     @time = time_conversion(data[:dt])
     @temperature = data[:temp]
     @wind_speed = data[:wind_speed].to_s
-    @wind_direction = wind_direction(data[:wind_deg]) # convert to direction
+    @wind_direction = get_wind_direction(data[:wind_deg]) # convert to direction
     @conditions = data[:weather].first[:description]
     @icon = data[:weather].first[:icon]
   end
@@ -14,7 +14,7 @@ class HourlyWeather < Forecast
     Time.at(data).strftime("%k:%M")
   end
 
-  def wind_direction(degrees)
+  def get_wind_direction(degrees)
     val = (degrees / 22.5) + 0.5
     directions = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
     directions[(val % 16)]
