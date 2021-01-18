@@ -101,6 +101,9 @@ Default response
         }  
 ```
 
+[See an image of this live in Postman](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/forecast-response.png)
+[Close to full response from Postman](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/forecast-full.png)
+
 ### Background Image
 ```
 Given a city, state input, returns an image to be used as a background.
@@ -128,6 +131,9 @@ Default response
     }
 }
 ```
+
+[See this on Postman](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/background.png)
+
 
 ### User Creation
 ```
@@ -158,6 +164,8 @@ Default response
   }
 }
 ```
+[See an image of this live in Postman](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/users-new.png)
+[Duplicate warning example](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/users-duplicate.png)
 
 ### Create Session
 ```
@@ -187,6 +195,7 @@ Default response
   }
 }
 ```
+[See this on Postman](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/sessions.png)
 
 ### Road Tip
 ```
@@ -222,6 +231,7 @@ Default response
   }
 }
 ```
+[See this on Postman](https://raw.githubusercontent.com/katemorris/sweater-weather/main/images/road-trip.png)
 
 ## Contributors
 - Kate Tester - [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/katemorris/) - [![GitHub][github-shield]](https://github.com/katemorris)
