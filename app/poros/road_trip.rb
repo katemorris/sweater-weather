@@ -6,15 +6,19 @@ class RoadTrip
   def initialize(origin, destination, time, weather)
     @start_city = origin
     @end_city = destination
-    @travel_time = time
+    @travel_time = time.nil? ? 'Impossible Route' : time
     @weather_at_eta = weather_grabber(weather)
     @id = 'null'
   end
 
   def weather_grabber(weather)
-    {
-      temperature: weather.temperature,
-      conditions: weather.conditions
-    }
+    if weather.blank?
+      ""
+    else
+      {
+        temperature: weather.temperature,
+        conditions: weather.conditions
+      }
+    end
   end
 end
