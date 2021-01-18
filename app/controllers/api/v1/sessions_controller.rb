@@ -9,7 +9,9 @@ module Api
         if user&.authenticate(json[:password])
           render json: UserSerializer.new(user)
         else
-          render json: { message: 'unsuccessful', error: user.errors.full_messages.to_sentence.to_s },
+          render json: {
+            message: 'unsuccessful',
+            error: 'Something went wrong, please try logging in again!' },
                  status: :unprocessable_entity
         end
       end
