@@ -6,22 +6,32 @@ class RoadTripFacade
   def self.trip_data(origin, destination)
     time = MapService.travel_time(origin, destination)
     if time
-      coords = MapService.coordinates(destination)
-      forecast = WeatherService.forecast(coords)
-      time_breakdown = time.split(':')
-      if time_breakdown.first.to_i > 24
-        hours = (time_breakdown.first.to_i - 24).to_s
-        travel_in_seconds = 86_400 + Time.parse(time.gsub(time_breakdown.first, hours)).seconds_since_midnight
-      else
-        travel_in_seconds = Time.parse(time).seconds_since_midnight
-      end
-      hourly_weather = forecast[:hourly].select do |hourly|
-        hourly[:dt] < (Time.now.to_i + travel_in_seconds).to_i
-      end.last
-      weather = HourlyWeather.new(hourly_weather)
+      weather = HourlyWeather.new(hourly_weather(destination, time))
     else
       weather = ''
     end
     RoadTrip.new(origin, destination, time, weather)
   end
+
+  def self.forecast(destination)
+    WeatherService.forecast(MapService.coordinates(destination))
+  end
+
+  def self.travel_in_seconds(time)
+    time_breakdown = time.split(':')
+    if time_breakdown.first.to_i > 24
+      hours = (time_breakdown.first.to_i - 24).to_s
+      time_minus_day = time.gsub(time_breakdown.first, hours)
+      86_400 + Time.parse(time_minus_day).seconds_since_midnight
+    else
+      Time.parse(time).seconds_since_midnight
+    end
+  end
+
+  def self.hourly_weather(destination, time)
+    forecast(destination)[:hourly].select do |hourly|
+      hourly[:dt] < (Time.now.to_i + travel_in_seconds(time)).to_i
+    end.last
+  end
+
 end
