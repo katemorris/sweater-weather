@@ -26,13 +26,11 @@ RSpec.describe 'GET /api/v1/forecast?location=X', type: :request do
   end
 
   it 'given no location, no results are returned' do
-    VCR.use_cassette('no_location_forecast') do
-      location = ''
-      get api_v1_forecast_path, params: { location: location }
+    location = ''
+    get api_v1_forecast_path, params: { location: location }
 
-      expect(response.status).to eq(404)
-      message = JSON.parse(response.body, symbolize_names: true)
-      expect(message[:message]).to eq('Please fill in a location.')
-    end
+    expect(response.status).to eq(404)
+    message = JSON.parse(response.body, symbolize_names: true)
+    expect(message[:message]).to eq('Please fill in a location.')
   end
 end

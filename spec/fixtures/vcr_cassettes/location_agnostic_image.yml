@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<FLICKR_KEY>&format=json&method=flickr.photos.search&nojsoncallback=1&per_page=1&safe_search=1&text=TX
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '235'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jan 2021 19:06:06 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - F5mvGNaPIE3aJ2KvcD46ZJrHFZuLVykuYQbHEdUoLU_dlRkj2vlbag==
+    body:
+      encoding: UTF-8
+      string: '{"photos":{"page":1,"pages":551562,"perpage":1,"total":"551562","photo":[{"id":"50850000666","owner":"21319001@N03","secret":"b703461023","server":"65535","farm":66,"title":"Jewel","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
+  recorded_at: Mon, 18 Jan 2021 19:06:06 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest/?api_key=<FLICKR_KEY>&format=json&method=flickr.people.getInfo&nojsoncallback=1&user_id=21319001@N03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '860'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jan 2021 19:06:06 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - MGDRJG94IhkVwWgmNOFMmGB1iPZu98sjF8w2LPjgoVv27nY5BI7zfA==
+    body:
+      encoding: UTF-8
+      string: '{"person":{"id":"21319001@N03","nsid":"21319001@N03","ispro":1,"can_buy_pro":0,"iconserver":"5512","iconfarm":6,"path_alias":"zackhuggins","has_stats":"1","pro_badge":"standard","expire":"0","username":{"_content":"Zack
+        Huggins"},"realname":{"_content":"Zack Huggins"},"location":{"_content":"Dallas,
+        TX, U.S."},"timezone":{"label":"Central Time (US & Canada)","offset":"-06:00","timezone_id":"CST6CDT"},"description":{"_content":"10
+        fingers, 10 toes.\n\nLivin'' and lovin'' in Dallas, TX."},"photosurl":{"_content":"https:\/\/www.flickr.com\/photos\/zackhuggins\/"},"profileurl":{"_content":"https:\/\/www.flickr.com\/people\/zackhuggins\/"},"mobileurl":{"_content":"https:\/\/m.flickr.com\/photostream.gne?id=21295947"},"photos":{"firstdatetaken":{"_content":"1980-01-01
+        00:00:02"},"firstdate":{"_content":"1201238934"},"count":{"_content":9333}}},"stat":"ok"}'
+  recorded_at: Mon, 18 Jan 2021 19:06:06 GMT
+recorded_with: VCR 6.0.0
