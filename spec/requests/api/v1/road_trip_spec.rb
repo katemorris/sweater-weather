@@ -12,9 +12,9 @@ RSpec.describe 'POST /api/v1/road_trip', type: :request do
     )
     VCR.use_cassette('sample_road_trip') do
       data = {
-        "origin": "Denver,CO",
-        "destination": "Pueblo,CO",
-        "api_key": "890fhdusrjufs83jkf"
+        "origin": 'Denver,CO',
+        "destination": 'Pueblo,CO',
+        "api_key": '890fhdusrjufs83jkf'
       }
       post api_v1_road_trip_path, params: data, as: :json
 

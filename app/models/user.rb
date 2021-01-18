@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true, email: true
   validates :api_key, uniqueness: true, presence: true

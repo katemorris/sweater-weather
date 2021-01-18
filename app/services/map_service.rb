@@ -2,7 +2,7 @@
 
 class MapService
   def self.coordinates(location)
-    response = conn.get("/geocoding/v1/address") do |req|
+    response = conn.get('/geocoding/v1/address') do |req|
       req.params['key'] = ENV['MQ_KEY']
       req.params['location'] = location
     end
@@ -10,7 +10,7 @@ class MapService
   end
 
   def self.travel_time(origin, destination)
-    response = conn.get("/directions/v2/route") do |req|
+    response = conn.get('/directions/v2/route') do |req|
       req.params['key'] = ENV['MQ_KEY']
       req.params['from'] = origin
       req.params['to'] = destination

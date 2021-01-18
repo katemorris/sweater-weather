@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'date'
 
 class RoadTripFacade
@@ -13,7 +14,7 @@ class RoadTripFacade
       end.last
       weather = HourlyWeather.new(hourly_weather)
     else
-      weather = ""
+      weather = ''
     end
     RoadTrip.new(origin, destination, time, weather)
   end

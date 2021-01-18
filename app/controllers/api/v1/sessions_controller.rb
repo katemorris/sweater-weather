@@ -6,7 +6,7 @@ module Api
       def create
         json = JSON.parse(request.body.string, symbolize_names: true)
         user = User.find_by(email: json[:email])
-        if user && user.authenticate(json[:password])
+        if user&.authenticate(json[:password])
           render json: UserSerializer.new(user)
         else
           render json: { message: 'unsuccessful', error: user.errors.full_messages.to_sentence.to_s },
