@@ -1,4 +1,5 @@
-# README
+# Sweater Weather
+This product uses the Flickr API but is not endorsed or certified by SmugMug, Inc.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
