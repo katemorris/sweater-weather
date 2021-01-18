@@ -8,20 +8,21 @@ RSpec.describe RoadTrip do
     @destination = 'Killeen, TX'
     @time = '16:34:00'
     @weather = HourlyWeather.new({
-      :dt=>1610946000,
-      :temp=>35.13,
-      :feels_like=>27.45,
-      :pressure=>1013,
-      :humidity=>69,
-      :dew_point=>26.69,
-      :uvi=>0,
-      :clouds=>4,
-      :visibility=>10000,
-      :wind_speed=>5.88,
-      :wind_deg=>287,
-      :weather=>[{:id=>800, :main=>"Clear", :description=>"clear sky", :icon=>"01n"}],
-      :pop=>0
-    })
+                                   dt: 1_610_946_000,
+                                   temp: 35.13,
+                                   feels_like: 27.45,
+                                   pressure: 1013,
+                                   humidity: 69,
+                                   dew_point: 26.69,
+                                   uvi: 0,
+                                   clouds: 4,
+                                   visibility: 10_000,
+                                   wind_speed: 5.88,
+                                   wind_deg: 287,
+                                   weather: [{ id: 800, main: 'Clear', description: 'clear sky',
+                                               icon: '01n' }],
+                                   pop: 0
+                                 })
     @rt = RoadTrip.new(@origin, @destination, @time, @weather)
   end
 

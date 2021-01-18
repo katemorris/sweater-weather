@@ -24,7 +24,7 @@ RSpec.describe MapService do
         response = MapService.travel_time(origin, destination)
 
         expect(response).to be_a String
-        expect(response).to eq("20:49:11")
+        expect(response).to eq('20:49:11')
       end
     end
   end
