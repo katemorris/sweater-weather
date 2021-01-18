@@ -16,5 +16,16 @@ RSpec.describe MapService do
         expect(response).to_not have_key(:latlng)
       end
     end
+
+    it '.travel_time()' do
+      VCR.use_cassette('sample_travel_time') do
+        origin = 'Denver, CO'
+        destination = 'Johnson City, TN'
+        response = MapService.travel_time(origin, destination)
+
+        expect(response).to be_a String
+        expect(response).to eq("20:49:11")
+      end
+    end
   end
 end
