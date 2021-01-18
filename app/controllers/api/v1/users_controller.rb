@@ -13,7 +13,7 @@ module Api
           api_key: SecureRandom.uuid
           })
         if user.save
-          render json: UserSerializer.new(user)
+          render json: UserSerializer.new(user), status: :created
         else
           render json: { message: 'unsuccessful', error: user.errors.full_messages.to_sentence.to_s },
                  status: :unprocessable_entity
