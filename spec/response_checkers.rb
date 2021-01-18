@@ -77,7 +77,7 @@ module ResponseCheckers
 
     expect(user[:data]).to have_key(:type)
     expect(user[:data][:type]).to be_a String
-    expect(user[:data][:type]).to eq("user")
+    expect(user[:data][:type]).to eq('user')
 
     expect(user[:data]).to have_key(:id)
     expect(user[:data][:type]).to be_a String
