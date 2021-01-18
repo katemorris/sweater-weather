@@ -2,8 +2,9 @@
 
 FactoryBot.define do
   factory :user do
-    api_key { 'MyString' }
-    email { 'MyString' }
-    password_digest { 'MyString' }
+    api_key { Faker::Number.unique.number(digits: 15).to_s }
+    email { Faker::Internet.email }
+    password { 'DIGEST' }
+    password_confirmation { 'DIGEST' }
   end
 end
