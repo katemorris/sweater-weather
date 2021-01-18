@@ -42,4 +42,17 @@ RSpec.describe 'POST /api/v1/users', type: :request do
     message = JSON.parse(response.body, symbolize_names: true)
     expect(message[:error]).to eq("Email has already been taken")
   end
+
+  it 'will get error if email is not formatted right' do
+    data = {
+      "email": 'bob',
+      "password": 'password',
+      "password_confirmation": 'password'
+    }
+    post api_v1_users_path, params: data, as: :json
+
+    expect(response.status).to eq(422)
+    message = JSON.parse(response.body, symbolize_names: true)
+    expect(message[:error]).to eq("Email is invalid")
+  end
 end
