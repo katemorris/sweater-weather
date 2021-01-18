@@ -6,7 +6,7 @@ RSpec.describe 'POST /api/v1/users', type: :request do
   it 'should register a user' do
     data = {
       "email": "whatever@example.com",
-      "password": "password"
+      "password": "password",
       "password_confirmation": "password"
     }
     post api_v1_users_path, params: data, as: :json
