@@ -13,7 +13,6 @@ RSpec.describe 'POST /api/v1/users', type: :request do
 
     expect(response.status).to eq(201)
     user = JSON.parse(response.body, symbolize_names: true)
-
-    register_user_checker(user, data['email'])
+    register_user_checker(user, data[:email])
   end
 end
