@@ -25,11 +25,11 @@ module ResponseCheckers
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:feels_like)
     expect(forecast[:data][:attributes][:current_weather][:feels_like]).to be_a Float
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:humidity)
-    expect(forecast[:data][:attributes][:current_weather][:humidity]).to be_an Integer
+    expect(forecast[:data][:attributes][:current_weather][:humidity]).to be_a Numeric
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:uvi)
-    expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_an Float
+    expect(forecast[:data][:attributes][:current_weather][:uvi]).to be_a Numeric
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:visibility)
-    expect(forecast[:data][:attributes][:current_weather][:visibility]).to be_a Integer
+    expect(forecast[:data][:attributes][:current_weather][:visibility]).to be_a Numeric
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:conditions)
     expect(forecast[:data][:attributes][:current_weather][:conditions]).to be_a String
     expect(forecast[:data][:attributes][:current_weather]).to have_key(:icon)
@@ -118,7 +118,7 @@ module ResponseCheckers
     expect(trip[:data][:attributes][:weather_at_eta]).to be_a Hash
     expect(trip[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
     expect(trip[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
-    expect(trip[:data][:attributes][:weather_at_eta][:temperature]).to be_a Float
+    expect(trip[:data][:attributes][:weather_at_eta][:temperature]).to be_a Numeric
 
     expect(trip[:data][:attributes][:weather_at_eta]).to_not have_key(:sunrise)
   end
