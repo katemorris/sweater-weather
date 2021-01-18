@@ -69,4 +69,25 @@ module ResponseCheckers
     expect(forecast[:data][:attributes]).to_not have_key(:minutely_weather)
     expect(forecast[:data][:attributes]).to_not have_key(:alerts)
   end
+
+  def register_user_checker(user, email)
+    expect(user).to be_a Hash
+    expect(user).to have_key(:data)
+    expect(user[:data]).to be_a Hash
+
+    expect(user[:data]).to have_key(:type)
+    expect(user[:data][:type]).to be_a String
+    expect(user[:data][:type]).to eq("user")
+
+    expect(user[:data]).to have_key(:id)
+    expect(user[:data][:type]).to be_a String
+
+    expect(user[:data]).to have_key(:attributes)
+    expect(user[:data][:attributes]).to have_key(:email)
+    expect(user[:data][:attributes][:email]).to eq(email)
+
+    expect(user[:data][:attributes]).to have_key(:api_key)
+    expect(user[:data][:attributes]).to_not have_key(:password)
+    expect(user[:data][:attributes]).to_not have_key(:password_confirmation)
+  end
 end
