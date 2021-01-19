@@ -6,8 +6,15 @@ class MunchiesFacade
   def self.trip_data(origin, destination, food_type)
     time = MapService.travel_time(origin, destination)
     weather = weather_available?(destination, time)
-    restaurant = FoodService.restaurants(destination, food_type, time_of_arrival(time))
-    Munchies.new(origin, destination, time, weather, restaurant)
+    restaurant = first_open(destination, food_type, time)
+    Munchies.new(destination, time, weather, restaurant)
+  end
+
+  def self.first_open(destination, food_type, time)
+    set = FoodService.restaurants(destination, time_of_arrival(time), food_type)
+    set.select do |restaurant|
+      restaurant[:is_closed] == false
+    end.first
   end
 
   def self.forecast(destination)
