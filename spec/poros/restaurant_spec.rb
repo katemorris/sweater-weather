@@ -37,6 +37,14 @@ RSpec.describe Restaurant do
 
   it 'that it exists' do
     expect(@restaurant.name).to eq(@data[:name])
-    expect(@restaurant.address).to eq(@data[:location][:display_address])
+    expect(@restaurant.address).to eq('75 E Pearl Ave, Jackson, WY 83001')
+  end
+
+  describe 'instance methods' do
+    it '#address_one_line' do
+      input = ['4388 S Wall St.', 'New York, NY', '89327']
+      expected = '4388 S Wall St., New York, NY, 89327'
+      expect(@restaurant.address_one_line(input)).to eq(expected)
+    end
   end
 end
