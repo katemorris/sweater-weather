@@ -13,7 +13,10 @@ class RoadTrip
 
   def weather_grabber(weather)
     if weather.blank?
-      ""
+      {
+        temperature: 'none',
+        conditions: 'none'
+      }
     else
       {
         temperature: weather.temperature,

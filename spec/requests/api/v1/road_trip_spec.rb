@@ -51,9 +51,10 @@ RSpec.describe 'POST /api/v1/road_trip', type: :request do
       post api_v1_road_trip_path, params: data, as: :json
 
       expect(response.status).to eq(200)
-      trip = JSON.parse(response.body, symbolize_names: true)
-      expect(trip[:data][:attributes][:travel_time]).to eq('Impossible Route')
-      expect(trip[:data][:attributes][:weather_at_eta]).to eq('')
+      trip = JSON.parse(response.body, symbolize_names: true)[:data]
+      expect(trip[:attributes][:travel_time]).to eq('Impossible Route')
+      expect(trip[:attributes][:weather_at_eta][:conditions]).to eq('none')
+      expect(trip[:attributes][:weather_at_eta][:temperature]).to eq('none')
     end
   end
 
