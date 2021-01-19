@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'date'
 
 RSpec.describe 'GET /api/v1/munchies', type: :request do
+  before :each do
+    allow(Time).to receive(:now).and_return(Time.local(2021, 1, 19, 9, 10))
+  end
   it 'should return weather, travel time, and food options for a trip' do
-    VCR.use_cassette('sample_munchies') do
 
+    VCR.use_cassette('sample_munchies') do
       data = {
         "start": 'Denver,CO',
         "end": 'Jackson Hole, WY',

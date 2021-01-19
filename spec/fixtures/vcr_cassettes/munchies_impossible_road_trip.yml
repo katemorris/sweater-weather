@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 19 Jan 2021 18:10:59 GMT
+      - Tue, 19 Jan 2021 18:21:11 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -27,11 +27,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=4E7ECDF901363E0E0C4B173A44F83DB8; Path=/directions; HttpOnly; Secure
+      - JSESSIONID=E5BAD112518A69D81A123A51AE8FE963; Path=/directions; HttpOnly; Secure
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Tue, 19 Jan 2021 18:10:59 GMT
+      - Tue, 19 Jan 2021 18:21:11 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -50,7 +50,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIwIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIwIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Tue, 19 Jan 2021 18:10:59 GMT
+  recorded_at: Tue, 19 Jan 2021 16:10:00 GMT
 - request:
     method: get
     uri: https://api.yelp.com/v3/businesses/search?limit=10&location=London,%20UK&open_at=&term=thai%20restaurant
@@ -78,31 +78,31 @@ http_interactions:
       Ratelimit-Dailylimit:
       - '5000'
       Ratelimit-Remaining:
-      - '4966'
+      - '4960'
       X-Zipkin-Id:
-      - 4a00e2649bfb1ad0
+      - 38677c4bee94b99f
       Server:
       - envoy
       Ratelimit-Resettime:
       - '2021-01-20T00:00:00+00:00'
       X-Routing-Service:
-      - routing-main--uswest2-5b584d59bc-5lrrw; site=public_api_v3
+      - routing-main--uswest2-5b584d59bc-kxh6p; site=public_api_v3
       X-B3-Sampled:
       - '0'
       X-Proxied:
-      - 10-69-150-247-uswest2bprod
+      - 10-69-90-30-uswest2aprod
       X-Extlb:
-      - 10-69-150-247-uswest2bprod
+      - 10-69-90-30-uswest2aprod
       Cache-Control:
       - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 19 Jan 2021 18:10:59 GMT
+      - Tue, 19 Jan 2021 18:21:12 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8220-DEN
+      - cache-den8275-DEN
       X-Cache:
       - MISS
       X-Cache-Hits:
@@ -208,5 +208,5 @@ http_interactions:
         "+442086178535", "display_phone": "+44 20 8617 8535", "distance": 1101.330592776158}],
         "total": 761, "region": {"center": {"longitude": -0.135955810546875, "latitude":
         51.51283552118349}}}'
-  recorded_at: Tue, 19 Jan 2021 18:10:59 GMT
+  recorded_at: Tue, 19 Jan 2021 16:10:00 GMT
 recorded_with: VCR 6.0.0
