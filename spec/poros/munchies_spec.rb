@@ -52,21 +52,22 @@ RSpec.describe Munchies do
   end
 
   it 'that it exists' do
-    expect(@munchies.start_city).to eq(@origin)
-    expect(@munchies.end_city).to eq(@destination)
+    expect(@munchies.destination_city).to eq(@destination)
     expect(@munchies.travel_time).to eq(@time)
-    expect(@munchies.weather_at_eta[:temperature]).to eq(@weather.temperature)
-    expect(@munchies.weather_at_eta[:conditions]).to eq(@weather.conditions)
+    expect(@munchies.forecast[:temperature]).to eq(@weather.temperature)
+    expect(@munchies.forecast[:summary]).to eq(@weather.conditions)
+    expect(@munchies.restaurant.name).to eq(@restaurant.name)
+    expect(@munchies.restaurant.address).to eq(@restaurant.address)
     expect(@munchies.id).to eq('null')
   end
 
   describe 'instance methods' do
     it '#weather_grabber()' do
       expected = {
-        temperature: 35.13,
-        conditions: 'clear sky'
+        temperature: 4.77,
+        summary: 'clear sky'
       }
-      expect(@rt.weather_grabber(@weather)).to eq(expected)
+      expect(@munchies.weather_grabber(@weather)).to eq(expected)
     end
   end
 end
