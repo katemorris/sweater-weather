@@ -21,8 +21,22 @@ describe RoadTripFacade do
         destination = 'New Bern, NC'
         response = RoadTripFacade.forecast(destination)
         expect(response).to be_a Hash
-
+        expect(response).to have_key(:hourly)
+        expect(response[:hourly]).to be_an Array
       end
+    end
+
+    it '.travel_in_seconds()' do
+      time1 = '26:31:58'
+      time2 = '07:31:58'
+      response1 = RoadTripFacade.travel_in_seconds(time1)
+      expect(response1).to be_a Numeric
+      expect(response1).to eq(95518)
+
+      time2 = '07:31:58'
+      response2 = RoadTripFacade.travel_in_seconds(time2)
+      expect(response2).to be_a Numeric
+      expect(response2).to eq(27118)
     end
   end
 end
