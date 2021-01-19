@@ -12,9 +12,10 @@ class MunchiesFacade
 
   def self.first_open(destination, food_type, time)
     set = FoodService.restaurants(destination, time_of_arrival(time), food_type)
-    set.select do |restaurant|
+    selected = set.select do |restaurant|
       restaurant[:is_closed] == false
     end.first
+    Restaurant.new(selected)
   end
 
   def self.forecast(destination)
@@ -34,7 +35,7 @@ class MunchiesFacade
 
   def self.weather_available?(destination, time)
     if time
-      HourlyWeather.new(hourly_weather(destination, time))
+      CurrentWeather.new(forecast(destination)[:current])
     else
       ''
     end
@@ -42,12 +43,6 @@ class MunchiesFacade
 
   def self.time_of_arrival(time)
     (Time.now.to_i + travel_in_seconds(time)).to_i
-  end
-
-  def self.hourly_weather(destination, time)
-    forecast(destination)[:hourly].select do |hourly|
-      hourly[:dt] < time_of_arrival(time)
-    end.last
   end
 
 end
