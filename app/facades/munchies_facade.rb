@@ -3,10 +3,11 @@
 require 'date'
 
 class MunchiesFacade
-  def self.trip_data(origin, destination)
+  def self.trip_data(origin, destination, food_type)
     time = MapService.travel_time(origin, destination)
     weather = weather_available?(destination, time)
-    RoadTrip.new(origin, destination, time, weather)
+    restaurant = FoodService.restaurant_by_location(destination, food_type, time_of_arrival(time))
+    Munchies.new(origin, destination, time, weather, restaurant)
   end
 
   def self.forecast(destination)
@@ -32,9 +33,13 @@ class MunchiesFacade
     end
   end
 
+  def self.time_of_arrival(time)
+    (Time.now.to_i + travel_in_seconds(time)).to_i
+  end
+
   def self.hourly_weather(destination, time)
     forecast(destination)[:hourly].select do |hourly|
-      hourly[:dt] < (Time.now.to_i + travel_in_seconds(time)).to_i
+      hourly[:dt] < time_of_arrival(time)
     end.last
   end
 
