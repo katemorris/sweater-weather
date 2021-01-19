@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=10&location=Jackson%20Hole,%20WY&open_at=1611178170&term=thai%20restaurant
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Bearer E62B1Q2P7F3b-L41y8AYYIfcIULhivIntp6gcZl676t2qpEYCzkCwpt0Qudt7Bn3khPiPAtgSVUJznTPrM_bbFR6knMVk2M4MNDyLUVdPJxXyYzJMeseLV-f_-cFYHYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4986'
+      X-Zipkin-Id:
+      - 07334c86134b78ff
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-20T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-c6z2g; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-166-32-uswest2bprod
+      X-Extlb:
+      - 10-69-166-32-uswest2bprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 17:07:11 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8220-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "yfUmMGZto902dvIVB_716Q", "alias": "teton-thai-teton-village",
+        "name": "Teton Thai", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/70QsM4xOGzavKuDmjJ417g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/teton-thai-teton-village?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 377, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 43.5881688640188, "longitude": -110.822714321699},
+        "transactions": [], "price": "$$", "location": {"address1": "7342 Granite
+        Loop Rd", "address2": "", "address3": "", "city": "Teton Village", "zip_code":
+        "83025", "country": "US", "state": "WY", "display_address": ["7342 Granite
+        Loop Rd", "Teton Village, WY 83025"]}, "phone": "+13077330022", "display_phone":
+        "(307) 733-0022", "distance": 14135.48202910841}, {"id": "dTvFRS9P87mMEy5EbyaPbA",
+        "alias": "teton-thai-driggs", "name": "Teton Thai", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/88upOZCfc-E-X330Br2akA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/teton-thai-driggs?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 195, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "bars", "title": "Bars"}], "rating": 4.0, "coordinates": {"latitude": 43.7234109729004,
+        "longitude": -111.111256325231}, "transactions": [], "price": "$$", "location":
+        {"address1": "18 N Main St", "address2": "Ste 100", "address3": "", "city":
+        "Driggs", "zip_code": "83422", "country": "US", "state": "ID", "display_address":
+        ["18 N Main St", "Ste 100", "Driggs, ID 83422"]}, "phone": "+12087878424",
+        "display_phone": "(208) 787-8424", "distance": 39560.03750962925}, {"id":
+        "2sDoyHhcLd96D7cFv9VA6Q", "alias": "streetfood-at-the-stagecoach-wilson",
+        "name": "Streetfood at the Stagecoach", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/ai075eZh_CSN6Hd3uYZggw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/streetfood-at-the-stagecoach-wilson?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 63, "categories": [{"alias": "burgers", "title": "Burgers"},
+        {"alias": "salad", "title": "Salad"}, {"alias": "tacos", "title": "Tacos"}],
+        "rating": 4.5, "coordinates": {"latitude": 43.4983428, "longitude": -110.877081},
+        "transactions": [], "price": "$$", "location": {"address1": "5755 W Hwy 22",
+        "address2": "", "address3": "The Stagecoach", "city": "Wilson", "zip_code":
+        "83014", "country": "US", "state": "WY", "display_address": ["5755 W Hwy 22",
+        "The Stagecoach", "Wilson, WY 83014"]}, "phone": "+13072006633", "display_phone":
+        "(307) 200-6633", "distance": 9187.028704503235}, {"id": "m0t5TPDNm55C0za12pnKQQ",
+        "alias": "branding-iron-grill-alta", "name": "Branding Iron Grill", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/fcYKXrm0gFKm96l-cfLzDA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/branding-iron-grill-alta?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 21, "categories": [{"alias": "salad", "title": "Salad"}, {"alias":
+        "tradamerican", "title": "American (Traditional)"}], "rating": 3.5, "coordinates":
+        {"latitude": 43.787116, "longitude": -110.959297}, "transactions": [], "price":
+        "$$", "location": {"address1": "3300 Ski Hill Rd", "address2": "", "address3":
+        "", "city": "Alta", "zip_code": "83414", "country": "US", "state": "WY", "display_address":
+        ["3300 Ski Hill Rd", "Alta, WY 83414"]}, "phone": "+13073532300", "display_phone":
+        "(307) 353-2300", "distance": 38763.14787055801}], "total": 4, "region": {"center":
+        {"longitude": -110.77239990234375, "latitude": 43.46583132879425}}}'
+  recorded_at: Tue, 19 Jan 2021 17:07:10 GMT
+recorded_with: VCR 6.0.0

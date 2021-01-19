@@ -6,7 +6,7 @@ class MunchiesFacade
   def self.trip_data(origin, destination, food_type)
     time = MapService.travel_time(origin, destination)
     weather = weather_available?(destination, time)
-    restaurant = FoodService.restaurant_by_location(destination, food_type, time_of_arrival(time))
+    restaurant = FoodService.restaurants(destination, food_type, time_of_arrival(time))
     Munchies.new(origin, destination, time, weather, restaurant)
   end
 
