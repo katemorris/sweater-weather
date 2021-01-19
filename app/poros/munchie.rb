@@ -16,8 +16,9 @@ class Munchie
       ""
     else
       {
-        temperature: weather.temperature,
-        summary: weather.conditions
+        summary: weather.conditions,
+        temperature: weather.temperature
+
       }
     end
   end
