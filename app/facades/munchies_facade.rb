@@ -42,7 +42,11 @@ class MunchiesFacade
   end
 
   def self.time_of_arrival(time)
-    (Time.now.to_i + travel_in_seconds(time)).to_i
+    if time
+      (Time.now.to_i + travel_in_seconds(time)).to_i
+    else
+      ''
+    end
   end
 
 end
