@@ -1,0 +1,212 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.mapquestapi.com/directions/v2/route?from=New%20York,%20NY&key=<MQ_KEY>&narrativeType=none&to=London,%20UK
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 18:10:59 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '278'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=4E7ECDF901363E0E0C4B173A44F83DB8; Path=/directions; HttpOnly; Secure
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Tue, 19 Jan 2021 18:10:59 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=0
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIwIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIwIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
+  recorded_at: Tue, 19 Jan 2021 18:10:59 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=10&location=London,%20UK&open_at=&term=thai%20restaurant
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Bearer E62B1Q2P7F3b-L41y8AYYIfcIULhivIntp6gcZl676t2qpEYCzkCwpt0Qudt7Bn3khPiPAtgSVUJznTPrM_bbFR6knMVk2M4MNDyLUVdPJxXyYzJMeseLV-f_-cFYHYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Ratelimit-Dailylimit:
+      - '5000'
+      Ratelimit-Remaining:
+      - '4966'
+      X-Zipkin-Id:
+      - 4a00e2649bfb1ad0
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-01-20T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-5b584d59bc-5lrrw; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-150-247-uswest2bprod
+      X-Extlb:
+      - 10-69-150-247-uswest2bprod
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 19 Jan 2021 18:10:59 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8220-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "meL2itEXPTDVyscFrsc7Uw", "alias": "busaba-soho-soho",
+        "name": "Busaba Soho", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/N5E2ZgIN_bv3IYteLCZ-jA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/busaba-soho-soho?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 382, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.5137892, "longitude": -0.134057824536853},
+        "transactions": [], "price": "\u00a3\u00a3", "location": {"address1": "106-110
+        Wardour Street", "address2": null, "address3": "", "city": "Soho", "zip_code":
+        "W1F 0TR", "country": "GB", "state": "XGL", "display_address": ["106-110 Wardour
+        Street", "Soho W1F 0TR", "United Kingdom"]}, "phone": "+442072558686", "display_phone":
+        "+44 20 7255 8686", "distance": 168.8070032052001}, {"id": "36rz4hKUsK3DvXEy69k-Gg",
+        "alias": "patara-london", "name": "Patara", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/iMe7vQL3QQbTssSq1Q_6rw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/patara-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 140, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.5141961, "longitude": -0.1307571}, "transactions":
+        [], "price": "\u00a3\u00a3\u00a3", "location": {"address1": "15 Greek Street",
+        "address2": "", "address3": "", "city": "London", "zip_code": "W1D 4DP", "country":
+        "GB", "state": "XGL", "display_address": ["15 Greek Street", "London W1D 4DP",
+        "United Kingdom"]}, "phone": "+442074371071", "display_phone": "+44 20 7437
+        1071", "distance": 390.327702139416}, {"id": "VTOd4cweIR_5uMHh0KLeBg", "alias":
+        "kiln-london", "name": "Kiln", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/wx-7MBtCasPF-3zrvoYqfQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/kiln-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 51, "categories": [{"alias": "noodles", "title": "Noodles"},
+        {"alias": "thai", "title": "Thai"}], "rating": 4.5, "coordinates": {"latitude":
+        51.5114108, "longitude": -0.1360504}, "transactions": [], "price": "\u00a3\u00a3",
+        "location": {"address1": "58 Brewer Street", "address2": "", "address3": null,
+        "city": "London", "zip_code": "W1F 9TL", "country": "GB", "state": "XGL",
+        "display_address": ["58 Brewer Street", "London W1F 9TL", "United Kingdom"]},
+        "phone": "", "display_phone": "", "distance": 159.83190000687998}, {"id":
+        "xTxsDcb6MSPgQL0Qbs4FeA", "alias": "rosas-carnaby-london-4", "name": "Rosa''s
+        Carnaby", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/IOi3LTLZy1fIzteferD84g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/rosas-carnaby-london-4?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 27, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.5128868006771, "longitude": -0.139143206082167},
+        "transactions": [], "price": "\u00a3\u00a3", "location": {"address1": "23a
+        Ganton Street", "address2": "", "address3": "", "city": "London", "zip_code":
+        "W1F 9BW", "country": "GB", "state": "XGL", "display_address": ["23a Ganton
+        Street", "London W1F 9BW", "United Kingdom"]}, "phone": "+442072879617", "display_phone":
+        "+44 20 7287 9617", "distance": 220.64419244380866}, {"id": "O4ctkL-NSlNSD-m3ikDllQ",
+        "alias": "taste-of-siam-london", "name": "Taste Of Siam", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/4gkPukyxYQW8Y3cQZWHF1Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/taste-of-siam-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 60, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.5356196, "longitude": -0.1397889}, "transactions":
+        [], "price": "\u00a3\u00a3", "location": {"address1": "45 Camden High Street",
+        "address2": "", "address3": "", "city": "London", "zip_code": "NW1 7JH", "country":
+        "GB", "state": "XGL", "display_address": ["45 Camden High Street", "London
+        NW1 7JH", "United Kingdom"]}, "phone": "+442073800665", "display_phone": "+44
+        20 7380 0665", "distance": 2547.3123506327875}, {"id": "cIUNqKiLAVaz6-Nsd6aLpA",
+        "alias": "siam-central-london", "name": "Siam Central", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/xmn3B5d0ROFNmm1TjlRmmQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/siam-central-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 72, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.518488287029, "longitude": -0.134537023404278},
+        "transactions": [], "price": "\u00a3\u00a3", "location": {"address1": "14
+        Charlotte Street", "address2": "", "address3": "", "city": "London", "zip_code":
+        "W1T 2LX", "country": "GB", "state": "XGL", "display_address": ["14 Charlotte
+        Street", "London W1T 2LX", "United Kingdom"]}, "phone": "+442074367460", "display_phone":
+        "+44 20 7436 7460", "distance": 636.1790418654514}, {"id": "l3philMY16I4nIxegEd8xw",
+        "alias": "papaya-london", "name": "Papaya", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_hqKIlzq6lhOjK1kBrLH4Q/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/papaya-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 32, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.514231, "longitude": -0.134374}, "transactions":
+        [], "price": "\u00a3", "location": {"address1": "14 St Anne''s Court", "address2":
+        "Soho", "address3": "", "city": "London", "zip_code": "W1F 0BD", "country":
+        "GB", "state": "XGL", "display_address": ["14 St Anne''s Court", "Soho", "London
+        W1F 0BD", "United Kingdom"]}, "phone": "+442077348994", "display_phone": "+44
+        20 7734 8994", "distance": 199.58575719114086}, {"id": "g3zKPOr5GlgBHIsoLdzi5A",
+        "alias": "rosas-thai-cafe-london-8", "name": "Rosa''s Thai Cafe", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/k4PQ86IcTE5F5JuGKA8etw/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/rosas-thai-cafe-london-8?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 29, "categories": [{"alias": "thai", "title": "Thai"}, {"alias":
+        "cafes", "title": "Cafes"}], "rating": 4.0, "coordinates": {"latitude": 51.5136433,
+        "longitude": -0.1273792}, "transactions": [], "location": {"address1": "26
+        Earlham St", "address2": "", "address3": null, "city": "London", "zip_code":
+        "WC2H 9LN", "country": "GB", "state": "XGL", "display_address": ["26 Earlham
+        St", "London WC2H 9LN", "United Kingdom"]}, "phone": "+442036276716", "display_phone":
+        "+44 20 3627 6716", "distance": 600.2621288991927}, {"id": "Ff_NPeVQrM9NAWkROYRA6w",
+        "alias": "thai-cottage-london", "name": "Thai Cottage", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/Q8MEFtzaCBn9avK-P3OTsA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/thai-cottage-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 20, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.0, "coordinates": {"latitude": 51.51475, "longitude": -0.135333}, "transactions":
+        [], "price": "\u00a3", "location": {"address1": "34 D''Arblay Street", "address2":
+        "", "address3": "", "city": "London", "zip_code": "W1F 8EX", "country": "GB",
+        "state": "XGL", "display_address": ["34 D''Arblay Street", "London W1F 8EX",
+        "United Kingdom"]}, "phone": "+442074397099", "display_phone": "+44 20 7439
+        7099", "distance": 220.20124301952075}, {"id": "Ut6Yq9cPOzfoCY_Dho10zQ", "alias":
+        "siam-eatery-london", "name": "Siam Eatery", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/-kyznVv6yYnxa0p8LRr4XA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/siam-eatery-london?adjust_creative=Dm5ft6BJp_2HQ7pD-hxdMw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=Dm5ft6BJp_2HQ7pD-hxdMw",
+        "review_count": 35, "categories": [{"alias": "thai", "title": "Thai"}], "rating":
+        4.5, "coordinates": {"latitude": 51.5120216603011, "longitude": -0.120094796436367},
+        "transactions": [], "price": "\u00a3", "location": {"address1": "24 Wellington
+        Street", "address2": "Covent Garden", "address3": "", "city": "London", "zip_code":
+        "WC2E 7DD", "country": "GB", "state": "XGL", "display_address": ["24 Wellington
+        Street", "Covent Garden", "London WC2E 7DD", "United Kingdom"]}, "phone":
+        "+442086178535", "display_phone": "+44 20 8617 8535", "distance": 1101.330592776158}],
+        "total": 761, "region": {"center": {"longitude": -0.135955810546875, "latitude":
+        51.51283552118349}}}'
+  recorded_at: Tue, 19 Jan 2021 18:10:59 GMT
+recorded_with: VCR 6.0.0

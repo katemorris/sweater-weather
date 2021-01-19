@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe 'GET /api/v1/munchies', type: :request do
   it 'should return weather, travel time, and food options for a trip' do
     VCR.use_cassette('sample_munchies') do
+
       data = {
         "start": 'Denver,CO',
         "end": 'Jackson Hole, WY',
@@ -13,52 +14,63 @@ RSpec.describe 'GET /api/v1/munchies', type: :request do
       get api_v1_munchies_path, params: data
 
       expect(response.status).to eq(200)
+      munchies = JSON.parse(response.body, symbolize_names: true)[:data]
+      expect(munchies).to be_a Hash
+      expect(munchies[:id]).to eq('null')
+      expect(munchies[:type]).to eq('munchies')
+      expect(munchies).to have_key(:attributes)
+      expect(munchies[:attributes]).to be_a Hash
+      expect(munchies[:attributes]).to have_key(:destination_city)
+      expect(munchies[:attributes]).to have_key(:travel_time)
+      expect(munchies[:attributes]).to have_key(:forecast)
+      expect(munchies[:attributes][:forecast]).to have_key(:summary)
+      expect(munchies[:attributes][:forecast]).to have_key(:temperature)
+      expect(munchies[:attributes]).to have_key(:restaurant)
+      expect(munchies[:attributes][:restaurant]).to have_key(:name)
+      expect(munchies[:attributes][:restaurant]).to have_key(:address)
+    end
+  end
+
+  it 'should return data even on long trips' do
+    VCR.use_cassette('munchies_long_road_trip') do
+      data = {
+        "start": 'New York, NY',
+        "end": 'Los Angeles, CA',
+        "food": "thai"
+      }
+      get api_v1_munchies_path, params: data
+
+      expect(response.status).to eq(200)
+      munchies = JSON.parse(response.body, symbolize_names: true)[:data]
+      expect(munchies).to be_a Hash
+      expect(munchies[:id]).to eq('null')
+      expect(munchies[:type]).to eq('munchies')
+      expect(munchies).to have_key(:attributes)
+      expect(munchies[:attributes]).to be_a Hash
+      expect(munchies[:attributes]).to have_key(:destination_city)
+      expect(munchies[:attributes]).to have_key(:travel_time)
+      expect(munchies[:attributes]).to have_key(:forecast)
+      expect(munchies[:attributes][:forecast]).to have_key(:summary)
+      expect(munchies[:attributes][:forecast]).to have_key(:temperature)
+      expect(munchies[:attributes]).to have_key(:restaurant)
+      expect(munchies[:attributes][:restaurant]).to have_key(:name)
+      expect(munchies[:attributes][:restaurant]).to have_key(:address)
+    end
+  end
+
+  it 'should not return data on impossible trips' do
+    VCR.use_cassette('munchies_impossible_road_trip') do
+      data = {
+        "start": 'New York, NY',
+        "end": 'London, UK',
+        "food": "thai"
+      }
+      get api_v1_munchies_path, params: data
+
+      expect(response.status).to eq(200)
       munchies = JSON.parse(response.body, symbolize_names: true)
-      require "pry"; binding.pry
+      expect(munchies[:data][:attributes][:travel_time]).to eq('Impossible Route')
+      expect(munchies[:data][:attributes][:forecast]).to eq('')
     end
-  end
-
-  xit 'should return data even on long trips' do
-    VCR.use_cassette('long_road_trip') do
-      data = {
-        "origin": 'New York, NY',
-        "destination": 'Los Angeles, CA',
-        "api_key": @user.api_key
-      }
-      post api_v1_road_trip_path, params: data, as: :json
-
-      expect(response.status).to eq(200)
-      trip = JSON.parse(response.body, symbolize_names: true)
-      road_trip_checker(trip)
-    end
-  end
-
-  xit 'should return data even on long trips' do
-    VCR.use_cassette('impossible_road_trip') do
-      data = {
-        "origin": 'New York, NY',
-        "destination": 'London, UK',
-        "api_key": @user.api_key
-      }
-      post api_v1_road_trip_path, params: data, as: :json
-
-      expect(response.status).to eq(200)
-      trip = JSON.parse(response.body, symbolize_names: true)
-      expect(trip[:data][:attributes][:travel_time]).to eq('Impossible Route')
-      expect(trip[:data][:attributes][:weather_at_eta]).to eq('')
-    end
-  end
-
-  xit 'should return unauthorized if api_key is not correct' do
-    data = {
-      "origin": 'Denver,CO',
-      "destination": 'Pueblo,CO',
-      "api_key": 'NONSENSE'
-    }
-    post api_v1_road_trip_path, params: data, as: :json
-
-    expect(response.status).to eq(401)
-    message = JSON.parse(response.body, symbolize_names: true)
-    expect(message[:message]).to eq('unauthorized')
   end
 end
