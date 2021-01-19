@@ -11,7 +11,9 @@ RSpec.describe MapService do
 
         expect(response).to be_a Hash
         expect(response).to have_key(:lat)
+        expect(response[:lat]).to be_a Float
         expect(response).to have_key(:lng)
+        expect(response[:lng]).to be_a Float
         expect(response).to_not have_key(:street)
         expect(response).to_not have_key(:latlng)
       end
