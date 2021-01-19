@@ -22,9 +22,9 @@ RSpec.describe CurrentWeather do
     }
 
     cw = CurrentWeather.new(data)
-    expect(cw.datetime).to eq('Sat, 16 Jan 2021 18:07:46 -0700')
-    expect(cw.sunrise).to eq('Sat, 16 Jan 2021 06:29:29 -0700')
-    expect(cw.sunset).to eq('Sat, 16 Jan 2021 16:51:42 -0700')
+    expect(cw.datetime).to eq('2021/01/16 18:07:46')
+    expect(cw.sunrise).to eq('2021/01/16 06:29:29')
+    expect(cw.sunset).to eq('2021/01/16 16:51:42')
     expect(cw.temperature).to eq(data[:temp])
     expect(cw.feels_like).to eq(data[:feels_like])
     expect(cw.uvi).to eq(data[:uvi])

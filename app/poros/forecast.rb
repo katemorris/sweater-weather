@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'date'
 
 class Forecast
   attr_reader :id, :current_weather, :daily_weather, :hourly_weather
@@ -23,6 +24,6 @@ class Forecast
   end
 
   def datetime_conversion(data)
-    Time.at(data).to_datetime
+    Time.at(data).strftime('%Y/%m/%d %H:%M:%S')
   end
 end

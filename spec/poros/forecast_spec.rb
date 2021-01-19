@@ -21,7 +21,7 @@ RSpec.describe Forecast do
   describe 'instance methods' do
     it '#datetime_conversion()' do
       data = 1_610_841_600
-      expect(@forecast.datetime_conversion(data)).to eq('Sat, 16 Jan 2021 17:00:00.000000000 -0700')
+      expect(@forecast.datetime_conversion(data)).to eq('2021/01/16 17:00:00')
     end
   end
 end

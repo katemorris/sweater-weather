@@ -26,8 +26,8 @@ RSpec.describe DailyWeather do
 
   it 'that it exists' do
     expect(@dw.date).to eq('2021-01-16')
-    expect(@dw.sunrise).to eq('Sat, 16 Jan 2021 06:29:29 -0700')
-    expect(@dw.sunset).to eq('Sat, 16 Jan 2021 16:51:42 -0700')
+    expect(@dw.sunrise).to eq('2021/01/16 06:29:29')
+    expect(@dw.sunset).to eq('2021/01/16 16:51:42')
     expect(@dw.max_temp).to eq(@data[:temp][:max])
     expect(@dw.min_temp).to eq(@data[:temp][:min])
     expect(@dw.conditions).to eq(@data[:weather].first[:description])
