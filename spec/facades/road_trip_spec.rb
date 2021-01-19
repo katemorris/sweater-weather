@@ -15,5 +15,14 @@ describe RoadTripFacade do
         expect(response.travel_time).to eq('26:31:58')
       end
     end
+
+    it '.forecast()' do
+      VCR.use_cassette('rt_facade_forecast') do
+        destination = 'New Bern, NC'
+        response = RoadTripFacade.forecast(destination)
+        expect(response).to be_a Hash
+
+      end
+    end
   end
 end

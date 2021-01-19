@@ -14,7 +14,8 @@ class RoadTripFacade
   end
 
   def self.forecast(destination)
-    WeatherService.forecast(MapService.coordinates(destination))
+    exclude = 'daily,current,minutely,alerts'
+    WeatherService.forecast(MapService.coordinates(destination), exclude)
   end
 
   def self.travel_in_seconds(time)
