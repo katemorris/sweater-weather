@@ -7,7 +7,7 @@ class MunchiesFacade
     time = MapService.travel_time(origin, destination)
     weather = weather_available?(destination, time)
     restaurant = first_open(destination, food_type, time)
-    Munchies.new(destination, time, weather, restaurant)
+    Munchie.new(destination, time, weather, restaurant)
   end
 
   def self.first_open(destination, food_type, time)

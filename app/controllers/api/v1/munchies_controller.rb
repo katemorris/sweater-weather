@@ -5,7 +5,7 @@ module Api
     class MunchiesController < ApplicationController
       def create
         data = MunchiesFacade.trip_data(params[:start], params[:end], params[:food])
-        render json: MunchiesSerializer.new(data)
+        render json: MunchieSerializer.new(data)
       end
     end
   end

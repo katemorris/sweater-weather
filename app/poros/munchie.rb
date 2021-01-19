@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Munchies
+class Munchie
   attr_reader :destination_city, :travel_time, :forecast, :restaurant, :id
 
   def initialize(destination, time, weather, restaurant)

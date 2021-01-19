@@ -21,7 +21,7 @@ RSpec.describe 'GET /api/v1/munchies', type: :request do
       munchies = JSON.parse(response.body, symbolize_names: true)[:data]
       expect(munchies).to be_a Hash
       expect(munchies[:id]).to eq('null')
-      expect(munchies[:type]).to eq('munchies')
+      expect(munchies[:type]).to eq('munchie')
       expect(munchies).to have_key(:attributes)
       expect(munchies[:attributes]).to be_a Hash
       expect(munchies[:attributes]).to have_key(:destination_city)
@@ -48,7 +48,7 @@ RSpec.describe 'GET /api/v1/munchies', type: :request do
       munchies = JSON.parse(response.body, symbolize_names: true)[:data]
       expect(munchies).to be_a Hash
       expect(munchies[:id]).to eq('null')
-      expect(munchies[:type]).to eq('munchies')
+      expect(munchies[:type]).to eq('munchie')
       expect(munchies).to have_key(:attributes)
       expect(munchies[:attributes]).to be_a Hash
       expect(munchies[:attributes]).to have_key(:destination_city)

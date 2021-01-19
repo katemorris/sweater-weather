@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Munchies do
+RSpec.describe Munchie do
   before :each do
     @destination = 'Jackson Hole, WY'
     @time = '07:40:21'
@@ -48,7 +48,7 @@ RSpec.describe Munchies do
        :display_phone=>"(307) 733-0005",
        :distance=>1691.7029459361822
      })
-    @munchies = Munchies.new(@destination, @time, @weather, @restaurant)
+    @munchies = Munchie.new(@destination, @time, @weather, @restaurant)
   end
 
   it 'that it exists' do
