@@ -32,6 +32,7 @@ gem 'fast_jsonapi'
 gem 'figaro'
 gem 'rack-cors'
 gem 'simplecov', require: false, group: :test
+gem 'typhoeus'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
