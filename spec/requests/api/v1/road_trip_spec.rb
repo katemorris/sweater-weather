@@ -5,10 +5,9 @@ require 'rails_helper'
 RSpec.describe 'POST /api/v1/road_trip', type: :request do
   before :each do
     @user = create(:user,
-      email: 'whatever@example.com',
-      password: 'password',
-      password_confirmation: 'password'
-    )
+                   email: 'whatever@example.com',
+                   password: 'password',
+                   password_confirmation: 'password')
   end
 
   it 'should return data for a road trip if authorized' do

@@ -5,11 +5,11 @@ require 'date'
 class RoadTripFacade
   def self.trip_data(origin, destination)
     time = MapService.travel_time(origin, destination)
-    if time
-      weather = HourlyWeather.new(hourly_weather(destination, time))
-    else
-      weather = ''
-    end
+    weather = if time
+                HourlyWeather.new(hourly_weather(destination, time))
+              else
+                ''
+              end
     RoadTrip.new(origin, destination, time, weather)
   end
 
@@ -34,5 +34,4 @@ class RoadTripFacade
       hourly[:dt] < (Time.now.to_i + travel_in_seconds(time)).to_i
     end.last
   end
-
 end

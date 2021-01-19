@@ -30,12 +30,12 @@ describe RoadTripFacade do
       time1 = '26:31:58'
       response1 = RoadTripFacade.travel_in_seconds(time1)
       expect(response1).to be_a Numeric
-      expect(response1).to eq(95518)
+      expect(response1).to eq(95_518)
 
       time2 = '07:31:58'
       response2 = RoadTripFacade.travel_in_seconds(time2)
       expect(response2).to be_a Numeric
-      expect(response2).to eq(27118)
+      expect(response2).to eq(27_118)
     end
 
     it '.hourly_weather()' do

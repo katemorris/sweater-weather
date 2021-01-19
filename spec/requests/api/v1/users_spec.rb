@@ -40,7 +40,7 @@ RSpec.describe 'POST /api/v1/users', type: :request do
 
     expect(response.status).to eq(422)
     message = JSON.parse(response.body, symbolize_names: true)
-    expect(message[:error]).to eq("Email has already been taken")
+    expect(message[:error]).to eq('Email has already been taken')
   end
 
   it 'will get error if email is not formatted right' do
@@ -53,6 +53,6 @@ RSpec.describe 'POST /api/v1/users', type: :request do
 
     expect(response.status).to eq(422)
     message = JSON.parse(response.body, symbolize_names: true)
-    expect(message[:error]).to eq("Email is invalid")
+    expect(message[:error]).to eq('Email is invalid')
   end
 end

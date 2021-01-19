@@ -43,7 +43,7 @@ RSpec.describe RoadTrip do
       }
       expect(@rt.weather_grabber(@weather)).to eq(expected)
 
-      weather_blank = ""
+      weather_blank = ''
       expected2 = {
         temperature: 'none',
         conditions: 'none'

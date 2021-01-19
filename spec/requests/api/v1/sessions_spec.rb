@@ -5,10 +5,9 @@ require 'rails_helper'
 RSpec.describe 'POST /api/v1/sessions', type: :request do
   before :each do
     create(:user,
-      email: 'whatever@example.com',
-      password: 'password',
-      password_confirmation: 'password'
-    )
+           email: 'whatever@example.com',
+           password: 'password',
+           password_confirmation: 'password')
     @error = 'Something went wrong, please try logging in again!'
   end
   it 'should return a users info if present/authorized' do

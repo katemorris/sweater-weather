@@ -31,8 +31,8 @@ gem 'faraday'
 gem 'fast_jsonapi'
 gem 'figaro'
 gem 'rack-cors'
+gem 'rubocop-rails'
 gem 'simplecov', require: false, group: :test
-gem 'typhoeus'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -44,6 +44,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rubocop-rspec'
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'

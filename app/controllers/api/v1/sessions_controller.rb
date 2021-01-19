@@ -11,7 +11,8 @@ module Api
         else
           render json: {
             message: 'unsuccessful',
-            error: 'Something went wrong, please try logging in again!' },
+            error: 'Something went wrong, please try logging in again!'
+          },
                  status: :unprocessable_entity
         end
       end
