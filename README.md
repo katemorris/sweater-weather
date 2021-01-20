@@ -52,7 +52,7 @@ YELP_KEY: your_key_here
 
 5. From here, you are free to hit any of the api endpoints listed below. The URL should be prefixed with your localhost port like this `GET http://localhost:3000/api/v1/forecast?location=denver,co`
 
-6. To run our test suite, run `bundle exec rspec` in your terminal. **As of 1/15/2021, this app is at 100% test coverage.**
+6. To run our test suite, run `bundle exec rspec` in your terminal. **As of 1/19/2021, this app is at 100% test coverage.**
 
 ## Schema
 
