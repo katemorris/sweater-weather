@@ -38,13 +38,21 @@ $ bundle install
 $ rails db:{create,migrate,seed}
 ```
 
-2. Next, startup your server with the `$ rails server` command
+2. Install Figaro by running `bundle exec figaro install`. Then add your keys to the application.yml file. Key names are:
+```
+FLICKR_KEY: your_key_here
+MQ_KEY: your_key_here
+OW_KEY: your_key_here
+YELP_KEY: your_key_here
+```
 
-3. You should now be able to open your web browser, navigate to `http://localhost:3000/` and see the Rails default information page.
+3. Next, startup your server with the `$ rails server` command
 
-4. From here, you are free to hit any of the api endpoints listed below. The URL should be prefixed with your localhost port like this `GET http://localhost:3000/api/v1/forecast?location=denver,co`
+4. You should now be able to open your web browser, navigate to `http://localhost:3000/` and see the Rails default information page.
 
-5. To run our test suite, run `bundle exec rspec` in your terminal. **As of 1/15/2021, this app is at 100% test coverage.**
+5. From here, you are free to hit any of the api endpoints listed below. The URL should be prefixed with your localhost port like this `GET http://localhost:3000/api/v1/forecast?location=denver,co`
+
+6. To run our test suite, run `bundle exec rspec` in your terminal. **As of 1/15/2021, this app is at 100% test coverage.**
 
 ## Schema
 
