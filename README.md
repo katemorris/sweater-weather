@@ -65,9 +65,9 @@ Default response
         "type": "forecast",
         "attributes": {
             "current_weather": {
-                "datetime": "2021-01-18T13:16:20.000-07:00",
-                "sunrise": "2021-01-18T07:49:34.000-07:00",
-                "sunset": "2021-01-18T17:52:15.000-07:00",
+                "datetime": "2021/01/19 16:52:31",
+                "sunrise": "2021/01/19 07:49:10",
+                "sunset": "2021/01/19 17:53:16",
                 "temperature": 66.34,
                 "feels_like": 50.61,
                 "humidity": 14,
@@ -78,9 +78,9 @@ Default response
             },
             "daily_weather": [
                 {
-                    "date": "2021-01-18",
-                    "sunrise": "2021-01-18T07:49:34.000-07:00",
-                    "sunset": "2021-01-18T17:52:15.000-07:00",
+                    "date": "2021-01-19",
+                    "sunrise": "2021/01/19 07:49:10",
+                    "sunset": "2021/01/19 17:53:16",
                     "max_temp": 66.63,
                     "min_temp": 47.28,
                     "conditions": "clear sky",
@@ -220,12 +220,12 @@ Default response
     "id": "null",
     "type": "roadtrip",
     "attributes": {
-      "start_city": "Denver, CO",
-      "end_city": "Estes Park, CO",
-      "travel_time": "2 hours, 13 minutes",
+      "start_city": "Killeen, TX",
+      "end_city": "Austin, TX",
+      "travel_time": "01:10:06",
       "weather_at_eta": {
-        "temperature": 59.4,
-        "conditions": "partly cloudy with a chance of meatballs"
+          "temperature": 55.96,
+          "conditions": "overcast clouds"
       }
     }
   }
