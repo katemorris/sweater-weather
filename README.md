@@ -1,5 +1,7 @@
 # Sweater Weather
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/046b206298da7e392ec3/maintainability)](https://codeclimate.com/github/katemorris/sweater-weather/maintainability)
+
 ## Table of Contents
 
   - [What it does](#what-it-does)
