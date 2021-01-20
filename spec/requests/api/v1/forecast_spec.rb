@@ -33,4 +33,13 @@ RSpec.describe 'GET /api/v1/forecast?location=X', type: :request do
     message = JSON.parse(response.body, symbolize_names: true)
     expect(message[:message]).to eq('Please fill in a location.')
   end
+
+  it 'location in headers will return an error' do
+    location = ''
+    get api_v1_forecast_path, headers: { location: location }
+
+    expect(response.status).to eq(404)
+    message = JSON.parse(response.body, symbolize_names: true)
+    expect(message[:message]).to eq('Please fill in a location.')
+  end
 end
