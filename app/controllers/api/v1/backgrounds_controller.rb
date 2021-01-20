@@ -5,7 +5,7 @@ module Api
     class BackgroundsController < ApplicationController
       def show
         if params[:location].blank?
-          render json: { message: 'Please fill in a location.' }, status: :not_found
+          location_not_found
         else
           image_data = BackgroundsFacade.by_location(params[:location])
           render json: ImageSerializer.new(image_data)

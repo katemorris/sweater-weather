@@ -5,7 +5,7 @@ module Api
     class ForecastController < ApplicationController
       def show
         if params[:location].blank?
-          render json: { message: 'Please fill in a location.' }, status: :not_found
+          location_not_found
         else
           forecast = ForecastFacade.by_location(params[:location])
           render json: ForecastSerializer.new(forecast)
